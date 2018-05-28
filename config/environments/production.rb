@@ -88,4 +88,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-end
+  #for mailer (Rese password)
+  # config.actionmailer.defaulturl_options = { :host => 'http://www.yourHerokuLink.com' } 
+
+ end
+

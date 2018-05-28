@@ -56,5 +56,8 @@ gem 'devise'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
 gem 'autoprefixer-rails'
 gem 'carrierwave', '~> 1.0'
