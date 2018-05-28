@@ -3,61 +3,32 @@
   <div class="card-header">Create an Account</div>
   <div class="card-body">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  
   <%= devise_error_messages! %>
-  
-  
-
-    <div class="form-group">
-         <%= f.label :name %><br/>
-         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-       
-      </div>
-
-    <div class="form-group">
-<%= f.label :email %><br />
+  <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-     <div class="form-group">
-      
-             <%= f.label :password %>
-     <% if @minimum_password_length %>
+  <%= f.password_field :password, autocomplete: "off" %>
+  <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-      
-          <div class="form-group">
-             <%= f.label :password_confirmation %><br />
-             <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>
-       
-
-     
-     <div class="form-group">
-<%= f.label :gender %><br />
+  <% end %><br />
+ 
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
   <%= f.select :gender,options_for_select([['Male',0],['Female',1]]) ,autofocus: true %>
-    </div>
+  <%= f.file_field :image %>
+    
 
-<div class="form-group">
- <%= f.label :image %>
-    <%= f.file_field :image %>
-    </div>
+   <button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">SIGN UP</button>
 
-<button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">SIGN UP</button>
-
-     <% end %>
+  <% end %>
 
    
-   <div class="text-center">
+  <div class="text-center">
      <%= render "devise/shared/links" %>
-    </div>
+  </div>
 
     </div>
-</div>
+  </div>
 </div>
 
 
