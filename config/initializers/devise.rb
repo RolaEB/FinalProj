@@ -263,7 +263,7 @@ Devise.setup do |config|
     :image_aspect_ratio => "square",
     :image_size => 50
   }
-
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'public_profile,email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

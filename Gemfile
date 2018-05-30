@@ -64,4 +64,5 @@ gem "bootstrap_form",
 gem 'autoprefixer-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'activerecord-session_store'
