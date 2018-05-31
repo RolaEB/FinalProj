@@ -23,4 +23,7 @@ class User < ApplicationRecord
           end
         end
 
+        #relations with other models
+        has_many :pets
+
 end
