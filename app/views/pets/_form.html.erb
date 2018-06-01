@@ -1,50 +1,27 @@
-<%= form_with(model: pet, local: true) do |form| %>
-  <% if pet.errors.any? %>
+<%= bootstrap_form_with(model: pet, local: true) do |form| %>
+  <% if @pet.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
 
       <ul>
-      <% pet.errors.full_messages.each do |message| %>
+      <% @pet.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
+  
     <%= form.text_field :name, id: :pet_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :breed %>
     <%= form.text_field :breed, id: :pet_breed %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
     <%= form.file_field :photo, id: :pet_photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
     <%= form.number_field :price, id: :pet_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
     <%= form.text_field :phone, id: :pet_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
     <%= form.number_field :age, id: :pet_age %>
-  </div>
-  >
-<div class="field">
-    <%= form.label :description %>
     <%= form.text_area :description, id: :pet_description %>
-  </div>
+    <%= form.hidden_field :user_id,value:current_user.id %>
+  
+
+
   <div class="field">
   <select name="country">
   <% CS.get.each do |key,value|  %>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [ :google_oauth2 , :facebook]
 
          validates:name,presence: true ,length:{minimum:4}
-         validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
+         validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/,uniqueness: true
          validates :gender,presence: true, inclusion:{in:0..2}
          
          mount_uploader :image, ImageUploader

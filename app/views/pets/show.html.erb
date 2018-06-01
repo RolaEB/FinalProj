@@ -1,39 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%= render 'userNavBar',user: current_user %>
+<div class="col-2" ></div>
+<div class="col-8 ">
 
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
+<div class="card mt-4">
+<%=link_to(image_tag(@pet.photo.showImg.url, alt: 'Photo'),@pet.photo.url,target:'_blank')  if @pet.photo? %>
+  <div class="card-body">
+    <h3 class="card-title"><%=@pet.name%></h3>
+    <h4>Price:<%=@pet.price%>$</h4>
+    <h4>Breed:<%=@pet.breed%></h4> 
+    <h4>Age:<%=@pet.age%></h4> 
+    <h4 class="card-text">Description:<%=@pet.description%></h4>
+    <h4>For more info call:<%=@pet.phone%></h4> 
+    
+    
 
-<p>
-  <strong>Breed:</strong>
-  <%= @pet.breed %>
-</p>
+    
+  </div>
+</div>
+<br/>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @pet.photo %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @pet.price %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @pet.phone %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @pet.age %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @pet.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to "Back", :back %>
+<br/>
+<br/>
+<!-- /.card -->
+</div>
