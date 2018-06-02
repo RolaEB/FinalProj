@@ -1,3 +1,4 @@
+
 <%= bootstrap_form_with(model: pet, local: true) do |form| %>
   <% if @pet.errors.any? %>
     <div id="error_explanation">
@@ -19,8 +20,9 @@
     <%= form.number_field :age, id: :pet_age %>
     <%= form.text_area :description, id: :pet_description %>
     <%= form.hidden_field :user_id,value:current_user.id %>
-  
-
+    
+    <%= form.select :type_id, options_for_select(Type.all.map {|t|[t.name, t.id]}) ,class:"form-control" %>
+    
 
   <div class="field">
   <select name="country">
@@ -30,8 +32,6 @@
   </select>
   </div>
 
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <br/>
+  
 <% end %>

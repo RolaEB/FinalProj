@@ -1,0 +1,3 @@
+<% js = escape_javascript(
+    <%= render 'list',objects:@pets  %>
+$("#filterrific_results").html("<%= js %>");
