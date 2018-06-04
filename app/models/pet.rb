@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
     belongs_to :user
-    belongs_to :pet
-    
+    belongs_to :type
+   
     #vlidations
     validates:name,presence: { message: "give your pet a name please" } ,length:{minimum:4}
          validates :price, presence: true,numericality: { greater_than_or_equal_to: 0 }
@@ -23,7 +23,7 @@ class Pet < ApplicationRecord
       
     ]
     # default for will_paginate
-    #self.per_page = 9
+    self.per_page = 9
 
     #scopes
     scope :search_query, lambda { |query|
@@ -42,9 +42,11 @@ class Pet < ApplicationRecord
     where(
       terms.map {
         or_clauses = [
-          "LOWER(students.name) LIKE ?",
-          "LOWER(students.breed) LIKE ?",
-          "LOWER(students.description) LIKE ?"
+          "LOWER(pets.name) LIKE ?",
+          "LOWER(pets.breed) LIKE ?",
+          "LOWER(pets.description) LIKE ?",
+          
+
         ].join(' OR ')
         "(#{ or_clauses })"
       }.join(' AND '),
@@ -74,11 +76,11 @@ scope :sorted_by, lambda { |sort_option|
 
     def self.options_for_sorted_by
         [
-          
           ['Creation date (newest first)', 'created_at_desc'],
           ['Creation date (oldest first)', 'created_at_asc'],
-          ['Price (lowest first)', 'created_at_asc'],
-          ['Creation date (highest first)', 'created_at_desc']
+          ['Price (highest first)', 'price_desc'],
+          ['Price (lowest first)', 'price_asc'],
+          
           
         ]
     end

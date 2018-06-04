@@ -1,3 +1,7 @@
+require 'builder'
+require 'will_paginate'
+include ActionView::Helpers::NumberHelper
+
 class PetsController < InheritedResources::Base
 
   private
@@ -7,7 +11,7 @@ class PetsController < InheritedResources::Base
     end
   public 
     def index 
-     @pets=Pet.all
+    
      @carousel=Pet.find(3)
      #for filtering
      @filterrific = initialize_filterrific(
@@ -17,8 +21,9 @@ class PetsController < InheritedResources::Base
         sorted_by: Pet.options_for_sorted_by,
         with_type_id: Type.options_for_select
       }
+      
     ) or return
-    @students = @filterrific.find.page(params[:page])
+    @pets = @filterrific.find.page(params[:page])
 
     respond_to do |format|
       format.html

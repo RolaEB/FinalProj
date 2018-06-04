@@ -14,11 +14,12 @@
       ) %>
     </div>
     <div>
-      Type
+      Type</br>
       <%= f.select(
         :with_type_id,
         @filterrific.select_options[:with_type_id],
-        { include_blank: '- Any -' }
+        { include_blank: '- Any -' },
+        class: 'filterrific-periodically-observed'
       ) %>
     </div>
     
