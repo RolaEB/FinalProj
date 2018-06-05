@@ -1,22 +1,16 @@
 <%= render 'userNavBar',user: current_user %>
-<%= render 'sidebarPlaceholder' %>
+<%= render 'questions/searchSidebar' %>
 
 <div class="col-lg-9">
-<% @questions.each do |question| %>
-<div class="card mt-4">
-  
-  <div class="card-body">
-    <h3 class="card-title"><%=link_to question.title,question %></h3>
-    
-    <p class="card-text"><%=question.content %></p>
-    <span class="text-info">Posted by <%= question.user.name%> on <%= question.created_at.to_date %> </span>
-    
-  </div>
-</div>
-<!-- /.card -->
-<% end %>
-<br>
+<div id="filterrific_results">
 
+  
+  <div id="questions" >
+  <%= render 'list',questions: @questions %>
+  </div>
+<br>
+<%= will_paginate @questions  %>
+<br>
 <%= link_to 'New Question', new_question_path %>
 
 </div>

@@ -3,10 +3,14 @@
 <%= render 'filterbar',title: "Pet Sale" %>
 <%= render 'carousel' %>
 
-
+<div id="pets">
+<div>
+<%= page_entries_info @pets %>
+</div>
 <%= render 'list',objects:@pets  %>
 
-   
+</div>
+<%= will_paginate @pets %>  
 
 <%= link_to 'New Pet', new_pet_path %>
 
