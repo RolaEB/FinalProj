@@ -1,4 +1,4 @@
 <% js = escape_javascript(
-    <%= render(partial: 'application/list', locals: { objects: @pets })
+     render(partial: 'pets/list', locals: { objects: @pets })
     ) %>
 $("#pets").html("<%= js %>");
