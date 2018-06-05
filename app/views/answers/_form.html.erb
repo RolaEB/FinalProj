@@ -1,0 +1,7 @@
+
+<%= form_for([@question, @question.answers.build], remote: true) do |f| %>
+  <%= f.text_area :content ,class:'form-control' %><br />
+  <%= f.hidden_field :user_id,value:current_user.id %>
+  <%= f.hidden_field :question_id,value:@question.id %>
+  <button type="submit" value="Send" id="submit" class="btn btn-primary ">Send</button>
+<% end %>

@@ -5,27 +5,28 @@
 
  <h1 class="my-4"><%= title %></h1>
  <%= form_for_filterrific @filterrific do |f| %>
-    <div>
-      Search
-      <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-      <%= f.text_field(
-        :search_query,
-        class: 'filterrific-periodically-observed'
+
+    <div class="form-group">
+      <label>Search</label>
+      
+      <%= f.text_field(:search_query,
+        class:'filterrific-periodically-observed form-control'
       ) %>
     </div>
-    <div>
-      Type</br>
+
+    <div class="form-group">
+      <label>Type</label>
       <%= f.select(
         :with_type_id,
         @filterrific.select_options[:with_type_id],
         { include_blank: '- Any -' },
-        class: 'filterrific-periodically-observed'
+        class:'form-control'
       ) %>
     </div>
     
-    <div>
-      Sorted by
-      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+   <div class="form-group" >
+      <label>Sorted by</label>
+      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by],class:'form-control') %>
     </div>
     <div>
       <%= link_to(

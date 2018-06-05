@@ -1,0 +1,53 @@
+<%= render 'userNavBar',user: current_user %>
+
+<div class="row">
+
+<div class="col-lg-2">
+ 
+</div>
+<!-- /.col-lg-2 -->
+
+<div class="col-lg-9">
+
+  <div class="card mt-4">
+    
+    <div class="card-body">
+      <h3 class="card-title"><%=@question.title %></h3>
+      
+      <p class="card-text"><%=@question.content %></p>
+      <span class="text-info">Posted by <%= @question.user.name%> on <%= @question.created_at.to_date %> </span>
+    </div>
+  </div>
+  <!-- /.card -->
+
+  <div class="card card-outline-secondary my-4">
+   
+    <div class="card-body">
+    <%= render "answers/form" %> 
+    </div>
+  </div>
+  <!-- /.card -->
+
+  <div class="card card-outline-secondary my-4">
+    <div class="card-header">
+     Answers
+    </div>
+    <div class="card-body" id="ans">
+    <%= render @question.answers %>
+   
+      
+    </div>
+  </div>
+  <!-- /.card -->
+
+</div>
+<!-- /.col-lg-9 -->
+
+
+</div>
+<%= link_to 'Back', questions_path %>
+
+
+
+
+

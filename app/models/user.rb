@@ -25,5 +25,7 @@ class User < ApplicationRecord
 
         #relations with other models
         has_many :pets
+        has_many :questions
+        has_many :answers
 
 end

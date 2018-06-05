@@ -1,0 +1,4 @@
+
+ <p> <%= answer.content %></p>
+ <small class="text-muted">Posted by <%= answer.user.try(:name) %> on <%= answer.created_at.try(:to_date) %> </small>
+ <hr>
