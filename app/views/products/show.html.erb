@@ -1,0 +1,40 @@
+<%= render 'userNavBar',user: current_user %>
+
+
+<div class="row">
+
+<div class="col-lg-2">
+ 
+</div>
+<!-- /.col-lg-2 -->
+<div class="col-9 ">
+
+<div class="card mt-4">
+<%=link_to(image_tag(@product.productImage.showImg.url, alt: 'Photo'),@product.productImage.url,target:'_blank')  if @product.productImage? %>
+
+
+
+  <div class="card-body">
+    <h3 class="card-title"><%=@product.name%></h3>
+    <h4>Price:<%=@product.price%>$</h4>
+    <h4>Brand:<%=@product.brand%></h4> 
+    <h4 class="card-text">Description:<%=@product.description%></h4>
+    
+    
+    
+
+    
+  </div>
+</div>
+<br/>
+
+<%= link_to "Back", :back %>
+<br/>
+<br/>
+<!-- /.card -->
+</div>
+
+
+<!-- /.col-lg-9 -->
+
+</div>

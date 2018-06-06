@@ -1,0 +1,30 @@
+<%= bootstrap_form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+    <%= form.text_field :name, id: :product_name %>
+    <%= form.text_field :brand, id: :product_brand %>
+    <%= form.number_field :price, id: :product_price %>
+    <%= form.file_field :productImage %>
+    <%= form.text_area :description, id: :product_description %>
+    <%= form.hidden_field :user_id,value:current_user.id %>
+    <%= form.select :type_id, options_for_select(Type.all.map {|t|[t.name, t.id]})  %>
+    <%= form.select :category_id, options_for_select(Category.all.map {|c|[c.name, c.id]}) ,class:'form-control' %>
+  
+
+    <div class="text-center">
+    <button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">Submit</button>
+    <%= link_to 'Back', pets_path %>
+    </div>
+      
+    <% end %>

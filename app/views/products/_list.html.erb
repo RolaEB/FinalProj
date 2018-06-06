@@ -1,0 +1,28 @@
+
+<div>
+<%= page_entries_info @products %>
+</div>
+  
+
+<div class="row">
+<% objects.each do |obj| %>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+              
+              <%=link_to(image_tag(obj.productImage.thumbIndex.url, alt: 'Photo'),obj.productImage.url,target:'_blank')  if obj.productImage? %>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <%= link_to obj.name ,obj %>
+                  </h4>
+                  <h5><%= obj.price %> $</h5>
+                  <h5><%= obj.brand %></h5>
+                  <p class="card-text"><%= obj.category.name %></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">created <%= obj.created_at.to_date %></small>
+                </div>
+              </div>
+            </div>
+            <% end %>
+  </div>
+  <%= will_paginate @products %> 
