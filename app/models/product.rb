@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
     belongs_to :category
     belongs_to :type
+    has_many :reviews
 
     mount_uploader :productImage, ImageUploader
 

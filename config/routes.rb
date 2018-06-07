@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
 
   
+  
   resources :categories
-  resources :products
+  resources :products do
+    resources :reviews
+  end
   resources :questions do
     resources :answers
   end

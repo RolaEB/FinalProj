@@ -24,13 +24,7 @@
     <%= form.select :type_id, options_for_select(Type.all.map {|t|[t.name, t.id]}) ,class:'form-control' %>
     
 
-  <div class="field">
-  <select name="country">
-  <% CS.get.each do |key,value|  %>
-  <option value="<%= key %>"><%= value%></option>
-  <% end %>
-  </select>
-  </div>
+  
 
   <br/>
   <div class="text-center">
@@ -39,3 +33,4 @@
 </div>
   
 <% end %>
+

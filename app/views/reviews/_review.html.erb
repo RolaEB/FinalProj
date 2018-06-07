@@ -1,0 +1,3 @@
+<p> <%= review.review %></p>
+ <small class="text-muted">Posted by <%= review.user.try(:name) %> on <%= review.created_at.try(:to_date) %> </small>
+ <hr>

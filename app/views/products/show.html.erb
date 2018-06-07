@@ -27,7 +27,25 @@
   </div>
 </div>
 <br/>
+<div class="card card-outline-secondary my-4">
+   
+    <div class="card-body">
+    <%= render "reviews/form" %> 
+    </div>
+  </div>
+  <!-- /.card -->
 
+  <div class="card card-outline-secondary my-4">
+    <div class="card-header">
+     Reviews
+    </div>
+    <div class="card-body" id="rev">
+    <%= render @product.reviews %>
+   
+      
+    </div>
+  </div>
+  <!-- /.card -->
 <%= link_to "Back", :back %>
 <br/>
 <br/>
