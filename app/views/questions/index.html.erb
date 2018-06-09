@@ -1,6 +1,6 @@
 <%= render 'userNavBar',user: current_user %>
 <%= render 'questions/searchSidebar' %>
-
+<%= render 'carousel' %>
 <div class="col-lg-9">
 <div id="filterrific_results">
 
@@ -12,7 +12,9 @@
 <%= will_paginate @questions  %>
 <br>
 <%= link_to 'New Question', new_question_path %>
-
+</div>
 </div>
 <!-- /.col-lg-9 -->
 
+<%= render 'endIndexPage' %>
+<%= render 'footer' %>

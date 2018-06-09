@@ -1,0 +1,15 @@
+<%= render 'userNavBar',user: current_user %>
+<%= render 'filterbar',title: "Lost & Found" %>
+<%= render 'carousel' %>
+
+<div id="posters">
+
+<%= render 'list',objects:@posters  %>
+
+</div>
+ 
+
+<%= link_to 'New Poster', new_poster_path %>
+
+<%= render 'endIndexPage' %>
+<%= render 'footer' %>

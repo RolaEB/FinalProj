@@ -1,0 +1,30 @@
+<%= bootstrap_form_with(model: poster, local: true) do |form| %>
+  <% if poster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(poster.errors.count, "error") %> prohibited this poster from being saved:</h2>
+
+      <ul>
+      <% poster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    
+    <%= form.text_field :name, id: :poster_name %>
+    <%= form.text_field :breed, id: :poster_breed %>
+    <%= form.file_field :img, id: :poster_img %>
+    <%= form.text_area :description, id: :poster_description %>
+    <%= form.text_field :phone, id: :poster_phone %>
+    <%= form.text_field :last_seen, id: :poster_last_seen %>
+    <%= form.hidden_field :user_id, value:current_user.id%>
+  
+    <br/>
+    <div class="text-center">
+  <button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">Submit</button>
+  <%= link_to 'Back', posters_path %>
+  </div>
+    
+  
+<% end %>

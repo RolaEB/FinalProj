@@ -1,0 +1,39 @@
+<%= render 'userNavBar',user: current_user %>
+
+
+<div class="row">
+
+<div class="col-lg-2">
+ 
+</div>
+<!-- /.col-lg-2 -->
+<div class="col-9 ">
+
+<div class="card mt-4">
+<%=link_to(image_tag(@poster.img.showImg.url, alt: 'Photo'),@poster.img.url,target:'_blank')  if @poster.img? %>
+  <div class="card-body">
+    <h3 class="card-title"><%= @poster.name %></h3>
+    <h4>Breed:<%=@poster.breed%></h4> 
+    <h4 class="card-text">Description:<%=@poster.description%></h4>
+    <h4>Call day or night:<%=@poster.phone%></h4> 
+    
+    
+
+    
+  </div>
+</div>
+<br/>
+<%= link_to 'Edit', edit_poster_path(@poster) %> 
+<%= link_to "Back", posters_path %>
+<br/>
+<br/>
+<!-- /.card -->
+</div>
+
+
+<!-- /.col-lg-9 -->
+
+</div>
+
+
+
