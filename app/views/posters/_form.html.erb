@@ -19,7 +19,8 @@
     <%= form.text_field :phone, id: :poster_phone %>
     <%= form.text_field :last_seen, id: :poster_last_seen %>
     <%= form.hidden_field :user_id, value:current_user.id%>
-  
+    <%= form.select :poster_type, options_for_select(["LOST","FOUND"]) %>
+    
     <br/>
     <div class="text-center">
   <button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">Submit</button>

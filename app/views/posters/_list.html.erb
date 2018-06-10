@@ -14,10 +14,11 @@
                   <h4 class="card-title">
                   <%= link_to obj.name ,obj %>
                   </h4>
-                  <h4></h4>
+                 
                   <p class="card-text">Breed:<%= obj.breed %></p>
                   <p class="card-text">Description:<%= obj.description %></p>
-                </div>
+                  <h4><%= obj.poster_type %></h4>
+                  </div>
                 <div class="card-footer">
                   <small class="text-muted">created <%= obj.created_at.to_date %></small>
                 </div>

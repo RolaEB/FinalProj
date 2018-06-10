@@ -7,7 +7,7 @@ class PostersController < InheritedResources::Base
   private
 
     def poster_params
-      params.require(:poster).permit(:name, :breed, :img, :description, :phone, :last_seen, :user_id)
+      params.require(:poster).permit(:name, :breed, :img, :description, :phone, :last_seen, :user_id, :poster_type)
     end
 
     public 
