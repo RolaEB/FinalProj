@@ -7,7 +7,7 @@ class PetsController < InheritedResources::Base
   private
 
     def pet_params
-      params.require(:pet).permit(:name, :breed, :photo, :price, :phone, :age, :user_id, :description, :country, :type_id)
+      params.require(:pet).permit(:name, :breed, :photo, :price, :phone, :age, :user_id, :description, :type_id)
     end
   public 
     def index 
