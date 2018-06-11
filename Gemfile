@@ -69,6 +69,6 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'activerecord-session_store'
 gem 'city-state'
 gem 'filterrific'
-gem 'will_paginate', '~> 3.1.0'
+#gem 'will_paginate', '~> 3.1.0' 
 gem 'stripe'
 

@@ -1,6 +1,6 @@
 require 'builder'
-require 'will_paginate'
-include ActionView::Helpers::NumberHelper
+#require 'will_paginate'
+#include ActionView::Helpers::NumberHelper
 
 class QuestionsController < InheritedResources::Base
 

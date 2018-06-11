@@ -5,7 +5,7 @@ class Service < ApplicationRecord
     mount_uploader :img, ImageUploader
 
     # default for will_paginate
-    self.per_page = 9
+    #self.per_page = 9
 
     #for search and filter
     filterrific(

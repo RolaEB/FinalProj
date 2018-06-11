@@ -23,7 +23,7 @@ class Pet < ApplicationRecord
       
     ]
     # default for will_paginate
-    self.per_page = 9
+    #self.per_page = 9
 
     #scopes
     scope :search_query, lambda { |query|

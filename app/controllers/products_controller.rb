@@ -1,6 +1,6 @@
 require 'builder'
-require 'will_paginate'
-include ActionView::Helpers::NumberHelper
+#require 'will_paginate'
+#include ActionView::Helpers::NumberHelper
 
 class ProductsController < InheritedResources::Base
 
@@ -19,8 +19,7 @@ class ProductsController < InheritedResources::Base
         sorted_by: Product.options_for_sorted_by,
         with_type_id: Type.options_for_select,
         with_category_id: Category.options_for_select,
-
-     }
+      }
       ) or return
       @products = @filterrific.find.page(params[:page])
    

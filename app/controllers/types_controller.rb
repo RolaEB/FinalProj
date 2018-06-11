@@ -5,5 +5,6 @@ class TypesController < InheritedResources::Base
     def type_params
       params.require(:type).permit(:name)
     end
+  
 end
 
