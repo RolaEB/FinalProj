@@ -1,0 +1,32 @@
+<%= bootstrap_form_with(model: service, local: true) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+    <%= form.text_field :name, id: :service_name %>
+    <%= form.text_field :phone, id: :service_phone %>
+    <%= form.text_field :country, id: :service_country %>
+    <%= form.text_field :city, id: :service_city %>
+    <%= form.text_field :address, id: :service_address %>
+    <%= form.select :service_category_id, options_for_select(ServiceCategory.all.map {|s|[s.name, s.id]})%>
+    <%= form.hidden_field :user_id, value:current_user.id%>
+    <%= form.file_field :img, id: :service_img %>
+    <%= form.text_area :description, id: :service_description %>
+  
+
+  <br/>
+    <div class="text-center">
+  <button type="submit" value="Send" id="submit" class="btn btn-primary btn-block">Submit</button>
+  <%= link_to 'Back', services_path %>
+  </div>
+    
+<% end %>

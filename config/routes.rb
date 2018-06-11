@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :services
+  resources :service_categories
   root to: "home#index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,0 +1,14 @@
+<%= render 'userNavBar',user: current_user %>
+<%= render 'filterbar',title: "Services " %>
+<%= render 'carousel' %>
+<div id="services">
+
+<%= render 'list',objects:@services %>
+
+
+</div>
+<%= link_to 'New service', new_service_path %>
+
+<%= render 'endIndexPage' %>
+<%= render 'footer' %>
+

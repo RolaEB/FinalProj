@@ -29,5 +29,6 @@ class User < ApplicationRecord
         has_many :answers
         has_many :reviews
         has_many :posters
+        has_many :services
 
 end
