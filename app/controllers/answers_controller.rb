@@ -1,5 +1,5 @@
 class AnswersController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def answer_params

@@ -3,7 +3,7 @@ require 'builder'
 #include ActionView::Helpers::NumberHelper
 
 class QuestionsController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def question_params

@@ -14,7 +14,6 @@
  
     <%= form.text_field :name, id: :service_name %>
     <%= form.text_field :phone, id: :service_phone %>
-    <%= form.text_field :country, id: :service_country %>
     <%= form.text_field :city, id: :service_city %>
     <%= form.text_field :address, id: :service_address %>
     <%= form.select :service_category_id, options_for_select(ServiceCategory.all.map {|s|[s.name, s.id]})%>

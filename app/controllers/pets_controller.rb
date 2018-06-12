@@ -3,7 +3,7 @@ require 'builder'
 #include ActionView::Helpers::NumberHelper
 
 class PetsController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def pet_params

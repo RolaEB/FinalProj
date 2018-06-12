@@ -3,7 +3,7 @@ require 'builder'
 #include ActionView::Helpers::NumberHelper
 
 class ProductsController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def product_params

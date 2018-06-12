@@ -4,8 +4,9 @@ class Service < ApplicationRecord
 
     mount_uploader :img, ImageUploader
 
-    # default for will_paginate
-    #self.per_page = 9
+    #for google map
+    geocoded_by :address
+    after_validation :geocode
 
     #for search and filter
     filterrific(
@@ -69,5 +70,7 @@ def self.options_for_sorted_by
       
     ]
 end
+
+
 
 end

@@ -10,12 +10,10 @@
 <div class="col-9 ">
 
 <div class="card mt-4">
-
-<div class="card mt-4">
-<%=link_to(image_tag(@service.img.showImg.url, alt: 'Photo'),@service.img.url,target:'_blank')  if @service.img? %>
+<%=image_tag google_map(center: @service.address) %>
   <div class="card-body">
     <h3 class="card-title"><%= @service.name %></h3>
-    <h4><%=@service.country%>,<%=@service.city%></h4> 
+    <h4><%=@service.address%></h4> 
     <h4 class="card-text">Description:<%=@service.description%></h4>
     <h4>Contact:<%=@service.phone%></h4> 
     
@@ -27,11 +25,12 @@
 <br/>
 
 <!-- /.card -->
-</div>
 <%= link_to 'Edit', edit_service_path(@service) %> 
 <%= link_to "Back", services_path %>
 <br/>
 <br/>
+
+</div>
 
 <!-- /.col-lg-9 -->
 

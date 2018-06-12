@@ -3,7 +3,7 @@ require 'builder'
 #include ActionView::Helpers::NumberHelper
 
 class PostersController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def poster_params

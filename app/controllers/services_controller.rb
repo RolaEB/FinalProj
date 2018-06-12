@@ -3,11 +3,11 @@ require 'builder'
 #include ActionView::Helpers::NumberHelper
 
 class ServicesController < InheritedResources::Base
-
+  before_action :authenticate_user!
   private
 
     def service_params
-      params.require(:service).permit(:name, :country, :city, :address, :service_category_id, :img, :description, :user_id, :phone)
+      params.require(:service).permit(:name, :city, :address, :service_category_id, :img, :description, :user_id, :phone)
     end
   public 
   def index
@@ -27,5 +27,6 @@ class ServicesController < InheritedResources::Base
       format.js
     end
   end
+ 
 end
 
