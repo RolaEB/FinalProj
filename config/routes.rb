@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  
+  get "settings/payment-info/users/auth/stripe_connect/callback", to:"event#stripe_callback"
+  #get 'event/stripe_callback'
+
+  get 'event/payment_profile'
+
   resources :services
   resources :service_categories
   root to: "home#index"

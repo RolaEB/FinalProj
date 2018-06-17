@@ -1,0 +1,11 @@
+<%= render 'userNavBar',user: current_user %>
+
+<% if current_user.stripe_uid.present? %>
+   <h2>your balance</h2>
+   <h4>$<%= @balance.pending.first["amount"].to_f/100 %></h4>
+<% else %>
+<br/><br/>
+<h5>Please Connect with Stripe first  </h5>
+<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= ENV['STRIPE_CONNECT_CLIENT_ID'] %>&scope=read_write" class="btn btn-success" role="button">Connect to Stripe</a>
+<% end %>
+

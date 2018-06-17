@@ -1,6 +1,18 @@
-<h1>Editing Pet</h1>
+<%= render 'userNavBar',user: current_user %>
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Edit Your Sale Poster</div>
+      <div class="card-body">
 
 <%= render 'form', pet: @pet %>
+<hr>
+     
+<div class="text-center">
+<small>Want to delete?</small>
+<br/>
+<%= link_to "Delete Poster", @pet, data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-danger" %>
 
-<%= link_to 'Show', @pet %> |
-<%= link_to 'Back', pets_path %>
+</div>
+</div>
+</div>
+</div>

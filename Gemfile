@@ -72,3 +72,5 @@ gem 'filterrific'
 #gem 'will_paginate', '~> 3.1.0' 
 gem 'stripe'
 gem 'geocoder'
+#to help with stripe
+gem 'oauth2'

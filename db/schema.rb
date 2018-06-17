@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612130919) do
+ActiveRecord::Schema.define(version: 20180614141955) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -167,6 +167,8 @@ ActiveRecord::Schema.define(version: 20180612130919) do
     t.string "image"
     t.string "provider", limit: 50, default: "", null: false
     t.string "uid", limit: 500, default: "", null: false
+    t.integer "is_store"
+    t.string "stripe_uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

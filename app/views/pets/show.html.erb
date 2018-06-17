@@ -13,7 +13,7 @@
 <%=link_to(image_tag(@pet.photo.showImg.url, alt: 'Photo'),@pet.photo.url,target:'_blank')  if @pet.photo? %>
   <div class="card-body">
     <h3 class="card-title"><%=@pet.name%></h3>
-    <h4>Price:<%=@pet.price%>$</h4>
+    <h4>Price:<%=@pet.price%>EGP</h4>
     <h4>Breed:<%=@pet.breed%></h4> 
     <h4>Age:<%=@pet.age%></h4> 
     <h4 class="card-text">Description:<%=@pet.description%></h4>
@@ -26,7 +26,8 @@
 </div>
 <br/>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", pets_path %>
+&nbsp;&nbsp;<%= link_to 'Edit', edit_pet_path(@pet) ,class:"btn btn-warning" %> 
 <br/>
 <br/>
 <!-- /.card -->

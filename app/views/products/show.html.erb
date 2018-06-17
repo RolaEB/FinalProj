@@ -33,6 +33,7 @@
     
   </article>
    <%= hidden_field_tag 'amount', @product.price * 100  %>
+   <%= hidden_field_tag 'account_id', @product.user.stripe_uid %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Get Your Product"

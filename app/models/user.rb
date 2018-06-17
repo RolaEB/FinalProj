@@ -30,5 +30,6 @@ class User < ApplicationRecord
         has_many :reviews
         has_many :posters
         has_many :services
+        has_many :products
 
 end

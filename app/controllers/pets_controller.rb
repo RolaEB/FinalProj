@@ -4,6 +4,7 @@ require 'builder'
 
 class PetsController < InheritedResources::Base
   before_action :authenticate_user!
+  before_action :check_user,only: [ :edit, :update, :destroy]
   private
 
     def pet_params
@@ -12,7 +13,7 @@ class PetsController < InheritedResources::Base
   public 
     def index 
     
-     @carousel=Pet.find(3)
+    
      #for filtering
      @filterrific = initialize_filterrific(
       Pet,
@@ -30,6 +31,13 @@ class PetsController < InheritedResources::Base
       format.js
     end
 end
+
+ def check_user
+  @pet=Pet.find(params[:id])
+  if current_user.id != @pet.user_id
+    redirect_to(pets_path,notice:"Sorry,you don't have permission to perform this action")
+end
+ end
     
 end
 

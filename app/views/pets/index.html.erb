@@ -1,16 +1,14 @@
 
 <%= render 'userNavBar',user: current_user %>
 <%= render 'filterbar',title: "Pet Sale" %>
-<%= render 'carousel' %>
+<%= render 'carousel'%>
 
 <div id="pets">
-
 <%= render 'list',objects:@pets  %>
-
 </div>
  
 
-<%= link_to 'New Pet', new_pet_path %>
+
 
 <%= render 'endIndexPage' %>
 <%= render 'footer' %>

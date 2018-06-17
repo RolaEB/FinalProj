@@ -1,19 +1,76 @@
 
- <div class="container">
- <br/><br/>
- <%= button_to "logout" ,destroy_user_session_path,method: :delete,:class => "btn btn-primary " %> 
- <h1 align="center" >CityJungle</h1>
- <br/><br/><br/>
- <div class="row justify-content-center"
- <div class="btn-group btn-group-lg">
- <%= link_to "Pet Sale" ,pets_path,:class => "btn btn-outline-danger" %> 
- <%= link_to "Services" ,services_path,:class => "btn btn-outline-warning" %> 
- <%= link_to "Lost&Found" ,posters_path,:class => "btn btn-outline-dark" %> 
- <%= link_to "Store" ,products_path,:class => "btn btn-outline-primary" %> 
- <%= link_to "Q&A" ,questions_path,:class => "btn btn-outline-info" %> 
-</div> 
-</div>
+<%= render 'nav',user: current_user %>
+
+<header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item home  active" >
+          <%=image_tag("homepage/cat.jpg")%>
+            <div class="carousel-caption d-none d-md-block">
+            <%= link_to "Pet Sale" ,pets_path,:class => "btn btn-lg btn-outline-warning" %> 
+              <h2>Sell,Buy or Adopt a Pet.</h2>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item home" >
+          <%=image_tag("homepage/vet.jpg")%>
+            <div class="carousel-caption d-none d-md-block">
+            <%= link_to "Services" ,services_path,:class => "btn btn-lg btn-outline-danger" %> 
+  
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item home" >
+          <%=image_tag("homepage/lost.jpg")%>
+            <div class="carousel-caption d-none d-md-block">
+        
+            <%= link_to "Lost&Found" ,posters_path,:class => "btn btn-lg btn-outline-warning" %> 
+            <br/><br/>
+            </div>
+          </div>
+          <!-- Slide Four - Set the background image for this slide in the line below -->
+          <div class="carousel-item home" >
+          <%=image_tag("homepage/store.jpg")%>
+            <div class="carousel-caption d-none d-md-block">
+            <%= link_to "Click to Shop" ,products_path,:class => "btn btn-lg btn-outline-dark" %> 
+             <br/><br/>
+             <br/><br/>
+            </div>
+          </div>
+
+          <!-- Slide Five - Set the background image for this slide in the line below -->
+          <div class="carousel-item home" >
+          <%=image_tag("homepage/q.jpg")%>
+            <div class="carousel-caption d-none d-md-block">
+            <%= link_to "Get Answers" ,questions_path,:class => "btn btn-ld btn-outline-warning" %> 
+            
+            </div>
+          </div>
+
+
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+
+    <%= render 'footer' %>
+
+
  
-
-
-<div>
