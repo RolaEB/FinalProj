@@ -1,6 +1,6 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation,:name,:gender,:image,:provider,:uid, :is_store
-
+  permit_params :email, :password, :password_confirmation
+ 
   index do
     selectable_column
     id_column
@@ -10,6 +10,7 @@ ActiveAdmin.register AdminUser do
     column :created_at
     actions
   end
+  
 
   filter :email
   filter :current_sign_in_at
@@ -21,6 +22,8 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :password
       f.input :password_confirmation
+
+      
     end
     f.actions
   end
