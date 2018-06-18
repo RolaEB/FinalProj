@@ -19,7 +19,7 @@
     
     <h4>Brand:<%=@product.brand%></h4> 
     <h4 class="card-text">Description:<%=@product.description%></h4>
-    <h4>Price:<%=@product.price%>$</h4>
+    <h4>Price:<%=@product.price%>EGP</h4>
 
 
 <%= form_tag charges_path do %>
@@ -62,13 +62,20 @@
      Reviews
     </div>
     <div class="card-body" id="rev">
-    <%= render @product.reviews %>
+    <%= render @product.reviews.order(created_at: :desc) %>
    
       
     </div>
   </div>
   <!-- /.card -->
-<%= link_to "Back", :back %>
+
+<br/>
+
+<%= link_to "Back", products_path %>
+&nbsp;&nbsp;
+<% if current_user.is_store == 1 %>
+<%= link_to 'Edit', edit_product_path(@product) ,class:"btn btn-warning" %> 
+<% end %>
 <br/>
 <br/>
 <!-- /.card -->
@@ -78,3 +85,6 @@
 <!-- /.col-lg-9 -->
 
 </div>
+
+</div>
+<%= render 'footer' %>

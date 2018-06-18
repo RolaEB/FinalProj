@@ -1,2 +1,2 @@
 
-$('#rev').html("<%=j render @product.reviews %>");
+$('#rev').html("<%=j render @product.reviews.order(created_at: :desc) %>");

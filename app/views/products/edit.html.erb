@@ -1,6 +1,23 @@
-<h1>Editing Product</h1>
-
+<%= render 'userNavBar',user: current_user %>
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+    <div class="card-header">Edit Your Product</div>
+    <div class="card-body">
 <%= render 'form', product: @product %>
+<hr>
+     
+<div class="text-center">
+<small>Want to delete?</small>
+<br/>
+<%= link_to "Delete Poster", @product, data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-danger" %>
+</div>
+</div>
+</div>
+</div>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+</div>
+<br/>
+<br/>
+<%= render 'footer' %>
+
+

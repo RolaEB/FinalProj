@@ -45,6 +45,12 @@
     <%# add an automated spinner to your form when the list is refreshed %>
     <%= render_filterrific_spinner %>
   <% end %>
-  
+  <hr>
+  <br/>
+  <div class="text-center">
+  <% if current_user.is_store == 1 %> 
+  <%= link_to 'Add a new product', new_product_path,class:'btn btn-success' %>
+   <% end %>
+  </div>
  
  </div>
