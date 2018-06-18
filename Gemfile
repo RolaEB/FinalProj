@@ -73,4 +73,4 @@ gem 'filterrific'
 gem 'stripe'
 gem 'geocoder'
 #to help with stripe
-gem 'oauth2'
+#gem 'oauth2'

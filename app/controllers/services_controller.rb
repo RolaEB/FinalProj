@@ -4,6 +4,7 @@ require 'builder'
 
 class ServicesController < InheritedResources::Base
   before_action :authenticate_user!
+  before_action :check_user,only: [ :edit, :update, :destroy]
   private
 
     def service_params
@@ -27,6 +28,12 @@ class ServicesController < InheritedResources::Base
       format.js
     end
   end
+  def check_user
+    @service=Service.find(params[:id])
+    if current_user.id != @service.user_id
+      redirect_to(services_path,notice:"Sorry,you don't have permission to perform this action")
+    end
+   end
  
 end
 
