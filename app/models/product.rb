@@ -4,6 +4,14 @@ class Product < ApplicationRecord
     has_many :reviews
     belongs_to :user
 
+    validates:name,presence: true 
+    validates:price,presence: true 
+    validates:user_id,presence: true 
+    validates:category_id,presence: true 
+    validates:type_id,presence: true 
+    validates:brand,presence: true 
+    validates:productImage,presence: true 
+
     mount_uploader :productImage, ImageUploader
 
     #for search and filter

@@ -1,6 +1,13 @@
 class Poster < ApplicationRecord
     belongs_to :user
 
+    validates:name,presence: true 
+    validates:breed,presence: true 
+    validates:img,presence: true 
+    validates:phone,presence: true 
+    validates:user_id,presence: true 
+    validates:poster_type,presence: true 
+
     mount_uploader :img, ImageUploader
 
     #for search and filtering

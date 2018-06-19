@@ -2,6 +2,9 @@ class Question < ApplicationRecord
     belongs_to :user
     has_many :answers
 
+    validates:title,presence: true 
+    validates:content,presence: true 
+
     #for search and filter
     filterrific(
     default_filter_params: { sorted_by: 'created_at_desc' },

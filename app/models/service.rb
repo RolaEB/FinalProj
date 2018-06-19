@@ -4,6 +4,16 @@ class Service < ApplicationRecord
 
     mount_uploader :img, ImageUploader
 
+
+    validates:name,presence: true 
+    validates:city,presence: true 
+    validates:address,presence: true 
+    validates:service_category_id,presence: true 
+    validates:img,presence: true 
+    validates:user_id,presence: true 
+    validates:phone,presence: true 
+
+
     #for google map
     geocoded_by :address
     after_validation :geocode
