@@ -25,7 +25,10 @@
 <br/>
 
 <%= link_to "Back", services_path %>
-&nbsp;&nbsp;<%= link_to 'Edit', edit_service_path(@service) ,class:"btn btn-warning" %> 
+&nbsp;&nbsp;
+<% if current_user.id == @service.user_id %>
+<%= link_to 'Edit', edit_service_path(@service) ,class:"btn btn-warning" %> 
+<% end %>
 <br/>
 <br/>
 

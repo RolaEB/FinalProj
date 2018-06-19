@@ -27,7 +27,10 @@
 <br/>
 
 <%= link_to "Back", pets_path %>
-&nbsp;&nbsp;<%= link_to 'Edit', edit_pet_path(@pet) ,class:"btn btn-warning" %> 
+&nbsp;&nbsp;
+<% if current_user.id == @pet.user_id %>
+<%= link_to 'Edit', edit_pet_path(@pet) ,class:"btn btn-warning" %> 
+<% end %>
 <br/>
 <br/>
 <!-- /.card -->
