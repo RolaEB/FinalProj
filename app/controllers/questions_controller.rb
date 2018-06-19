@@ -4,6 +4,7 @@ require 'builder'
 
 class QuestionsController < InheritedResources::Base
   before_action :authenticate_user!
+  before_action :check_user,only: [ :edit, :update, :destroy]
   private
 
     def question_params
@@ -28,5 +29,11 @@ class QuestionsController < InheritedResources::Base
     end
   end
 
+  def check_user
+    @question=Question.find(params[:id])
+    if current_user.id != @question.user_id
+      redirect_to(questions_path,notice:"Sorry,you don't have permission to perform this action")
+    end
+   end
 end
 

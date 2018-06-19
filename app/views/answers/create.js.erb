@@ -1,2 +1,2 @@
 
-$('#ans').html("<%=j render @question.answers   %>");
+$('#ans').html("<%=j render @question.answers.order(created_at: :desc)   %>");

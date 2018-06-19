@@ -4,6 +4,7 @@ require 'builder'
 
 class PostersController < InheritedResources::Base
   before_action :authenticate_user!
+  before_action :check_user,only: [ :edit, :update, :destroy]
   private
 
     def poster_params
@@ -31,6 +32,13 @@ class PostersController < InheritedResources::Base
       format.js
     end
 end
+
+def check_user
+  @poster=Poster.find(params[:id])
+  if current_user.id != @poster.user_id
+    redirect_to(posters_path,notice:"Sorry,you don't have permission to perform this action")
+  end
+ end
     
 end
 

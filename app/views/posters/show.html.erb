@@ -23,8 +23,13 @@
   </div>
 </div>
 <br/>
-<%= link_to 'Edit', edit_poster_path(@poster) %> 
+
 <%= link_to "Back", posters_path %>
+&nbsp;&nbsp;
+<% if current_user.id == @poster.user_id %>
+<%= link_to 'Edit', edit_poster_path(@poster) ,class:"btn btn-warning" %> 
+<% end %>
+<br/>
 <br/>
 <br/>
 <!-- /.card -->

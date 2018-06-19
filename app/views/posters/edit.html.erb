@@ -6,8 +6,19 @@
       <div class="card-body">
 
 <%= render 'form', poster: @poster %>
+<hr>
+     
+<div class="text-center">
+<small>Want to delete?</small>
+<br/>
+<%= link_to "Delete Poster", @poster, data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-danger" %>
+</div>
 
 </div>
 </div>
 </div>
 
+</div>
+<br/>
+<br/>
+<%= render 'footer' %>
